@@ -3,6 +3,10 @@
 
 name: Java CI with Maven
 
+env:
+  ICU_VERSION: "66.1-1"
+  ICU_MAJOR_VERSION: $(echo ${{ICU_VERSION}} | cut -d"." -f1)
+
 on:
   push:
     branches: [ master ]
@@ -20,7 +24,11 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      #run: mvn -B package --file pom.xml
+      run: |
+        echo "${{env.ICU_VERSION}}"
+        echo "${{env.ICU_MAJOR_VERSION}}"
+        
       
     - name: List the current directory
       run: ls -a
