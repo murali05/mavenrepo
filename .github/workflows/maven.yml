@@ -5,7 +5,7 @@ name: Java CI with Maven
 
 env:
   ICU_VERSION: "66.1-1"
-  ICU_MAJOR_VERSION: "$(echo ${{ICU_VERSION}}) | cut -d'.' -f1"
+  ICU_MAJOR_VERSION: "echo ${{ICU_VERSION}} | cut -d'.' -f1"
 
 on:
   push:
