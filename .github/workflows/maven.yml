@@ -6,7 +6,7 @@ name: Java CI with Maven
 env:
   ICU_VERSION: "66.1-1"
   #ICU_MAJOR_VERSION: echo "${{env.ICU_VERSION}}" | cut -d'.' -f1
-  run: echo "ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -c 1-2)" >> $GITHUB_ENV
+  #run: echo "ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -c 1-2)" >> $GITHUB_ENV
   
 on:
   push:
@@ -19,6 +19,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set env
+      run: echo "ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -c 1-2)" >> $GITHUB_ENV
     - name: Printing ICU_MAJOR_VERSION value
       run: |
         echo $ICU_MAJOR_VERSION
