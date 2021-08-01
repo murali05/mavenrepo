@@ -20,9 +20,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: ICU_MAJOR_VERSION
-      run: echo "ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -d'.' -f1)"
+      run: echo "ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -d'.' -f1)" >> $GITHUB_ENV
     - name: ICU_BUILD_NUMBER
-      run: echo "ICU_BUILD_NUMBER=$(echo $ICU_VERSION | cut -d'-' -f2)"
+      run: echo "ICU_BUILD_NUMBER=$(echo $ICU_VERSION | cut -d'-' -f2)" >> $GITHUB_ENV
     - name: Printing the values
       run: |
         echo ${{env.ICU_VERSION}}
