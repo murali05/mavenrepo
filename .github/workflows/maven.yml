@@ -28,13 +28,13 @@ jobs:
       #run: mvn -B package --file pom.xml
       run: |
         echo "${{env.ICU_VERSION}}"
-        echo "${{env.ICU_MAJOR_VERSION}}"
+        echo $ICU_MAJOR_VERSION
         
       
     - name: List the current directory
       run: ls -a
       
     - name: List the target folder
-      run: |
-        cd target
-        ls -a
+      #run: |
+        #cd target
+        #ls -a
