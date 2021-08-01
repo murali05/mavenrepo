@@ -19,12 +19,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set env
+    - name: ICU_MAJOR_VERSION
       run: echo "ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -d'.' -f1)" >> $GITHUB_ENV
-    - name: Printing ICU_MAJOR_VERSION value
+    - name: ICU_BUILD_NUMBER
+      run: echo "ICU_BUILD_NUMBER=$(echo $ICU_VERSION | cut -d'-' -f1)" >> $GITHUB_ENV
+    - name: Printing the values
       run: |
-        echo ${{env.ICU_MAJOR_VERSION}}
         echo ${{env.ICU_VERSION}}
+        echo ${{env.ICU_MAJOR_VERSION}}
+        echo ${{env.ICU_BUILD_NUMBER}}
+        
       
 
       
