@@ -26,9 +26,8 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       #run: mvn -B package --file pom.xml
-      run: |
-        echo "${{env.ICU_VERSION}}"
-        echo $ICU_MAJOR_VERSION
+      run: echo "${{env.ICU_VERSION}}"
+      run: echo $ICU_MAJOR_VERSION
         
       
     - name: List the current directory
