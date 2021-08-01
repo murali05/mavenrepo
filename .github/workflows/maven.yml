@@ -24,11 +24,12 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Printing ICU_MAJOR_VERSION value
+      run: echo "${{env.ICU_MAJOR_VERSION}}"
     - name: Build with Maven
       #run: mvn -B package --file pom.xml
       run: echo "${{env.ICU_VERSION}}"
-    - name: Test
-      run: echo "${{env.CU_MAJOR_VERSION}}"
+      
         
       
     - name: List the current directory
