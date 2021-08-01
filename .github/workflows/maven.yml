@@ -24,6 +24,7 @@ jobs:
     - name: Printing ICU_MAJOR_VERSION value
       run: |
         echo $ICU_MAJOR_VERSION
+        echo $ICU_VERSION
       
 
       
