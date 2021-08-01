@@ -6,7 +6,7 @@ name: Java CI with Maven
 env:
   ICU_VERSION: "66.1-1"
   #ICU_MAJOR_VERSION: echo "${{env.ICU_VERSION}}" | cut -d'.' -f1
-  run: echo "ICU_MAJOR_VERSION=$(echo ${{env.ICU_VERSION}} | cut -c 1-6)"
+  run: ICU_MAJOR_VERSION=$(echo $ICU_VERSION | cut -c 1-6)
   
 on:
   push:
