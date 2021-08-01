@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Printing ICU_MAJOR_VERSION value
       run: |
-        echo "${{env.ICU_MAJOR_VERSION}}"
+        echo $ICU_MAJOR_VERSION
         echo "${{env.ICU_VERSION}}"
 
       
