@@ -24,7 +24,7 @@ jobs:
         EPAS_MAJOR_VERSION: [ 14, 13, 12, 11 ]
 
     steps:
-      - run: echo ${{matrix.EPAS_MAJOR_VERSION}
+      - run: echo ${{matrix.EPAS_MAJOR_VERSION}}
 
 
 
